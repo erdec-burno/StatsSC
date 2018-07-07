@@ -1,0 +1,31 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <form class="form-data" method="POST" action="/add">
+    <h1 class="h3 mb-3 font-weight-normal">Статистика OTOT по ГСА</h1>
+    <!-- <div class="row justify-content-center">
+      <div class="form-group">
+        <label for="inputField1">Поле 1</label>
+        <input type="text" id="field1" name="field1" class="form-control col-md-3" placeholder="" value="{{ stats.field1 }}" required autofocus>
+      </div>
+    </div>
+     -->
+    <div class="form-group">
+      <label for="inputField1">Поле 1</label>
+      <input type="text" id="field1" name="field1" class="form-control" placeholder="" value="{{ stats.field1 }}" required autofocus>
+    </div>
+
+    <div class="form-group">
+      <label for="inputField2">Поле 2</label>
+      <input type="text" id="field2" name="field2" class="form-control" placeholder="" value="{{ stats.field2 }}" required autofocus>
+    </div>
+
+    <div class="form-group">
+      <label for="inputField3">Поле 3</label>
+      <input type="text" id="field3" name="field3" class="form-control" placeholder="" value="{{ stats.field3 }}" required autofocus>
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Сохранить</button>
+  </form>
+
+{% endblock %}
