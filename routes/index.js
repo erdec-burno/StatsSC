@@ -23,7 +23,7 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-    // Fix time !!! Не забудь добавить эти данные в файл!
+    // Fix time !!! Не забудь добавить эти данные в файл! :)
     if (req.body.field1 && req.body.field1 && req.body.field1) {
         console.log(req.body);
     }
