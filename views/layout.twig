@@ -4,6 +4,9 @@
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/css/style.css' />
+      {% if autorefresh == true %}
+        <META HTTP-EQUIV="REFRESH" CONTENT="30">
+      {% endif %}
   </head>
   <body>
     {% block body %}{% endblock %}

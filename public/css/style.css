@@ -48,4 +48,24 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+/* svg data...*/
+
+.fil0 {fill:#FEFEFE}
+.sector {fill:#EBECEC}
+.tribunes {font-weight:bold;font-size:6125px;font-family:'Candara'}
+.fil2 {fill:#99CDA5}
+.fil3 {fill:#7CB932}
+.sectors {font-weight:bold;font-size:8056px;}
+.vipsector {fill:red}
+.fansector {fill:yellow}
+.vip {fill:white; font-weight:bold;font-size:6445px;}
+.fil4 {fill:#FEFEFE;fill-rule:nonzero}
+.fil1 {fill:#2B2A29;fill-rule:nonzero}
+.time, .fanzone {font-weight:normal;font-size:3675px;font-family:'Arial'}
+.total {font-weight:normal;font-size:9419px;font-family:'Arial'}
+.total-entered {font-weight:normal;font-size:21315px;text-anchor: middle;}
+.total-entered-fans {font-weight:bold;font-size:3675px;font-family:'Arial'}
+
+/*.fnt6 {font-weight:bold;font-size:6445px;font-family:'Arial'}*/
+
 
