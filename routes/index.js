@@ -11,7 +11,6 @@ const TotalSeatsFanZone = 570;
 router.get('/', function(req, res, next) {
     var data = fs.readFileSync("data.txt");
     var stats = JSON.parse(data);
-    //console.log(stats);
     var percentageTotal = (stats.field1 * 100) / TotalSeats;
     var str1 = Math.round(percentageTotal) + "%  " + TotalSeats;
     var percentageTotalFanZone = (stats.field2 * 100) / TotalSeatsFanZone;
@@ -23,21 +22,20 @@ router.get('/add', function(req, res, next) {
     //var data = fs.readFileSync(path.resolve()+"\\data.txt");
     var data = fs.readFileSync("data.txt");
     var stats = JSON.parse(data);
-    //console.log(__dirname);
-    //console.log(path.resolve());
-    //var stats = {field1: "300", field2: '180', field3: '750'};
     res.render('forma', { stats: stats });
 });
 
 router.post('/add', function(req, res, next) {
     var date = new Date();
-    var time =  date.getHours() + ":" + date.getMinutes(); // + ":" + date.getSeconds();
+    var minutes;
+    if (date.getMinutes()<9)
+        minutes = "0" + date.getMinutes()
+    else
+        minutes = date.getMinutes();
+
+    var time =  date.getHours() + ":" + minutes; // + ":" + date.getSeconds();
     var dataform = {field1: req.body.field1, field2: req.body.field2, time: time};
-        console.log(dataform);
-    /*if (req.body.field1 && req.body.field2) {
-        console.log(req.body);
-    }*/
-    //var stats = {field1: req.body.field1, field2: req.body.field2, field3: req.body.field3};
+    //console.log(dataform);
     res.render('forma', { stats: dataform });
 
     fs.writeFile("data.txt", JSON.stringify(dataform), function(err) {
