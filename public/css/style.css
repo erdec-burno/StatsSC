@@ -14,8 +14,8 @@ body {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /*padding-top: 40px;
+  padding-bottom: 40px;*/
   background-color: #f5f5f5;
 }
 
@@ -65,7 +65,3 @@ body {
 .total {font-weight:normal;font-size:9419px}
 .total-entered {font-weight:normal;font-size:21315px;text-anchor: middle}
 .total-entered-fans {font-weight:bold;font-size:3675px}
-
-/*.fnt6 {font-weight:bold;font-size:6445px;font-family:'Arial'}*/
-
-
