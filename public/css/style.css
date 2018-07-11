@@ -65,6 +65,6 @@ body {
 .total {font-weight:normal;font-size:9419px}
 .total-entered {font-weight:normal;font-size:24300px;text-anchor: middle}
 .total-entered-fans {font-weight:bold;font-size:3675px}
-@media handheld and (device-width: 1280px) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1280px) {
   svg {width: 94%;}
 }

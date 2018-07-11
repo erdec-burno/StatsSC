@@ -15,14 +15,14 @@ router.get('/', function(req, res, next) {
     var str1 = Math.round(percentageTotal) + "%  " + TotalSeats;
     var percentageTotalFanZone = (stats.field2 * 100) / TotalSeatsFanZone;
     var str2 = Math.round(percentageTotalFanZone) + "%  " + TotalSeatsFanZone;
-  res.render('index', { stats: stats, totalseats: str1, totalseatsfanzone: str2, autorefresh: true});
+  res.render('index', { stats: stats, totalseats: str1, totalseatsfanzone: str2, autorefresh: true, title: 'Main page'});
 });
 
 router.get('/add', function(req, res, next) {
     //var data = fs.readFileSync(path.resolve()+"\\data.txt");
     var data = fs.readFileSync("data.txt");
     var stats = JSON.parse(data);
-    res.render('forma', { stats: stats });
+    res.render('forma', { stats: stats, title: 'Add data...' });
 });
 
 router.post('/add', function(req, res, next) {
@@ -36,7 +36,7 @@ router.post('/add', function(req, res, next) {
     var time =  date.getHours() + ":" + minutes; // + ":" + date.getSeconds();
     var dataform = {field1: req.body.field1, field2: req.body.field2, time: time};
     //console.log(dataform);
-    res.render('forma', { stats: dataform });
+    res.render('forma', { stats: dataform, title: 'Add data...' });
 
     fs.writeFile("data.txt", JSON.stringify(dataform), function(err) {
             if(err) {
