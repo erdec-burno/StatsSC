@@ -4,24 +4,32 @@ var path = require('path');
 //var bodyParser = require('body-parser');
 var router = express.Router();
 const TotalSeats = 12756;
-const TotalSeatsFanZone = 570;
+const TotalSeatsGuestFanZone = 570;
+const TotalSeatsHomeFanZone = 546;
 
 //var urlencodedParser = bodyParser.urlencoded({ extended: false });
-/* GET home page. */
 router.get('/', function(req, res, next) {
-    var data = fs.readFileSync("data.txt");
-    var stats = JSON.parse(data);
-    var percentageTotal = (stats.field1 * 100) / TotalSeats;
-    var str1 = Math.round(percentageTotal) + "%  " + TotalSeats;
-    var percentageTotalFanZone = (stats.field2 * 100) / TotalSeatsFanZone;
-    var str2 = Math.round(percentageTotalFanZone) + "%  " + TotalSeatsFanZone;
-  res.render('index', { stats: stats, totalseats: str1, totalseatsfanzone: str2, autorefresh: true, title: 'Main page'});
+    try {
+        var data = fs.readFileSync("data.txt");
+        var stats = JSON.parse(data);
+        var percentageTotal = (stats.total * 100) / TotalSeats;
+        var str1 = Math.round(percentageTotal) + "%  " + TotalSeats;
+        var percentageTotalFanZone1 = (stats.guestfanzone * 100) / TotalSeatsGuestFanZone;
+        var guestfanzone = Math.round(percentageTotalFanZone1) + "%  " + TotalSeatsGuestFanZone;
+        var percentageTotalFanZone2 = (stats.homefanzone * 100) / TotalSeatsHomeFanZone;
+        var homefanzone = Math.round(percentageTotalFanZone2) + "%  " + TotalSeatsHomeFanZone;
+    } catch (err) {
+    }
+  res.render('index', { stats: stats, totalseats: str1, guestfanzone: guestfanzone, homefanzone: homefanzone, autorefresh: true, title: 'Main page'});
 });
 
 router.get('/add', function(req, res, next) {
     //var data = fs.readFileSync(path.resolve()+"\\data.txt");
-    var data = fs.readFileSync("data.txt");
-    var stats = JSON.parse(data);
+    try {
+        var data = fs.readFileSync("data.txt");
+        var stats = JSON.parse(data);
+    } catch (err) {
+    }
     res.render('forma', { stats: stats, title: 'Add data...' });
 });
 
@@ -34,7 +42,7 @@ router.post('/add', function(req, res, next) {
         minutes = date.getMinutes();
 
     var time =  date.getHours() + ":" + minutes; // + ":" + date.getSeconds();
-    var dataform = {field1: req.body.field1, field2: req.body.field2, time: time};
+    var dataform = {total: req.body.total, homefanzone: req.body.homefanzone, guestfanzone: req.body.guestfanzone, time: time};
     //console.log(dataform);
     res.render('forma', { stats: dataform, title: 'Add data...' });
 

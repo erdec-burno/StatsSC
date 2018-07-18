@@ -6,8 +6,8 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col d-flex justify-content-center">
-    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="" version="1.1" style="fill:#2B2A29; shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-         viewBox="0 0 170000 93500"
+    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="90%" height="" version="1.1" style="fill:#2B2A29; shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+         viewBox="0 0 153500 95000"
          xmlns:xlink="http://www.w3.org/1999/xlink">
 
       <g id="Слой_x0020_1">
@@ -122,7 +122,7 @@
           <polygon class="sector" points="42716,79097 42716,92364 23321,92364 23321,79097 35726,79097 35726,81258 39061,81258 39061,79097 "/>
           <path id="1" class="fil1" d="M42869 92364l-154 151 -154 -151 0 -13266 308 0 0 13266zm-308 0l308 0c0,83 -69,151 -154,151 -85,0 -154,-68 -154,-151zm-19241 151l-154 -151 154 -151 19395 0 0 302 -19395 0zm0 -302l0 302c-85,0 -154,-68 -154,-151 0,-83 69,-151 154,-151zm-154 -13115l154 -151 154 151 0 13266 -308 0 0 -13266zm308 0l-308 0c0,-83 69,-151 154,-151 85,0 154,68 154,151zm12251 -151l154 151 -154 151 -12405 0 0 -302 12405 0zm0 302l0 -302c85,0 154,68 154,151 0,84 -69,151 -154,151zm154 2010l-154 151 -154 -151 0 -2161 308 0 0 2161zm-308 0l308 0c0,84 -69,151 -154,151 -85,0 -154,-68 -154,-151zm3489 -151l154 151 -154 151 -3336 0 0 -302 3336 0zm0 302l0 -302c85,0 154,68 154,151 0,84 -69,151 -154,151zm-154 -2312l154 -151 154 151 0 2161 -308 0 0 -2161zm308 0l-308 0c0,-83 69,-151 154,-151 85,0 154,68 154,151zm3501 -151l154 151 -154 151 -3654 0 0 -302 3654 0zm0 302l0 -302c85,0 154,68 154,151 0,84 -69,151 -154,151z"/>
         </g>
-        <text x="74440" y="54100" class="total-entered">{{ stats.field1 }}</text>
+        <text x="74440" y="54100" class="total-entered">{{ stats.total }}</text>
         <text x="50523" y="65927" class="total">{{ totalseats }}</text>
         <g transform="matrix(2.64845E-14 -1 1 2.64845E-14 -26580.2 155797)">
           <text x="85000" y="46750"  class="tribunes">ЮЖНАЯ  ТРИБУНА</text>
@@ -132,9 +132,11 @@
         </g>
         <text x="46778" y="18917"  class="tribunes">ЗАПАДНАЯ  ТРИБУНА</text>
         <text x="45066" y="77894"  class="tribunes">ВОСТОЧНАЯ  ТРИБУНА</text>
-        <text x="154601" y="23807"  class="total-entered-fans">{{ stats.field2 }}</text>
-        <text x="154601" y="27685"  class="fanzone">{{ totalseatsfanzone }}</text>
-        <text x="104230" y="70240"  class="time">время {{ stats.time }}</text>
+        <text x="138000" y="16000"  class="total-entered-fans">{{ stats.guestfanzone }}</text>
+        <text x="138000" y="20000"  class="fanzone">{{ guestfanzone }}</text>
+        <text x="833" y="73056" id="stats.fans2" class="total-entered-fans">{{ stats.homefanzone }}</text>
+        <text x="833" y="76998" id="totalseatsfans2" class="fanzone">{{ homefanzone }}</text>
+        <text x="104230" y="70240"  class="time">{% if stats.time is defined %} время {{ stats.time }}{% endif %}</text>
         <text x="31223" y="9564"  class="sectors">1</text>
         <text x="52088" y="9564"  class="sectors">2</text>
         <text x="69984" y="9004"  class="vip">VIP</text>
