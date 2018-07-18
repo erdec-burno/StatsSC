@@ -47,11 +47,10 @@ router.post('/add', function(req, res, next) {
     res.render('forma', { stats: dataform, title: 'Add data...' });
 
     fs.writeFile("data.txt", JSON.stringify(dataform), function(err) {
-            if(err) {
+        if(err) {
                 return console.log(err);
-            }
-
-            console.log("The file was saved!");
+        }
+        //console.log("The file was saved!");
     });
 });
 
